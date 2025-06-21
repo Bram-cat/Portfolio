@@ -182,27 +182,19 @@ nav a::after {
 }
 
 .improved-pfp {
-  width: 170px;
-  height: 170px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 6px solid #fff;
-  background: linear-gradient(135deg, #00e6ff 0%, #2a5298 100%);
-  padding: 4px;
-  box-shadow: 0 8px 32px rgba(44, 83, 100, 0.18), 0 2px 16px #00e6ff33;
+  border: 5px solid #fff;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.18);
   object-fit: cover;
+  background: #fff;
   margin-bottom: 0;
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  display: block;
-  box-sizing: border-box;
-  transition: box-shadow 0.25s, transform 0.25s;
-}
-
-.improved-pfp:hover {
-  box-shadow: 0 12px 36px rgba(44, 83, 100, 0.28), 0 4px 24px #00e6ff55;
-  transform: scale(1.04) rotate(-2deg);
-  cursor: pointer;
+  margin-top: 0; /* Ensure no top margin */
+  margin-left: 0; /* Ensure no left margin */
+  margin-right: 0; /* Ensure no right margin */
+  display: block; /* Prevent inline spacing issues */
+  box-sizing: border-box; /* Include border in size */
 }
 
 .hero-right {
@@ -753,5 +745,53 @@ button:hover {
   }
   .contact-section {
     padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+}
+
+/* Add to your CSS file */
+.interactive-pfp-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.interactive-pfp {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s;
+  cursor: pointer;
+  animation: pfp-bounce-in 0.8s;
+}
+
+.interactive-pfp.hovered {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.pfp-tooltip {
+  position: absolute;
+  left: 50%;
+  top: 105%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  white-space: nowrap;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes pfp-bounce-in {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
   }
 }

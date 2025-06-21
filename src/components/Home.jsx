@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import demo1 from "../assets/demo1.png";
 import demo2 from "../assets/demo2.png";
 import pfp from "../assets/ghibli.png";
@@ -16,6 +17,7 @@ const DEMOS = [
 ];
 
 const Home = () => {
+  const [hovered, setHovered] = useState(false);
   const calendarUrl =
     "https://calendar.google.com/calendar/u/0/r/eventedit?text=Appointment+with+Developer&details=Let%27s+connect!";
 
@@ -45,12 +47,23 @@ const Home = () => {
       {/* Improved Home Section */}
       <header className="hero improved-hero" id="home">
         <div className="hero-content">
-          <div className="hero-left">
-            <img src={pfp} alt="Profile" className="profile-pic improved-pfp" />
+          <div
+            className="hero-left interactive-pfp-wrapper"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            <img
+              src={pfp}
+              alt="Profile"
+              className={`profile-pic improved-pfp interactive-pfp${
+                hovered ? " hovered" : ""
+              }`}
+            />
+            {hovered && <div className="pfp-tooltip">Hi, I'm V S! 👋</div>}
           </div>
           <div className="hero-right">
             <h1>
-              Hi, I'm <span className="hero-name">VS</span>
+              Hi, I'm <span className="hero-name">V S</span>
               <span className="hero-wave" role="img" aria-label="wave">
                 👋
               </span>
