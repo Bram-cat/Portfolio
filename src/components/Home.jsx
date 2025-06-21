@@ -1,6 +1,6 @@
 import demo1 from "../assets/demo1.png";
 import demo2 from "../assets/demo2.png";
-import pfp from "../assets/pfp.jpg";
+import pfp from "../assets/ghibli.png";
 
 const DEMOS = [
   {
@@ -50,7 +50,7 @@ const Home = () => {
           </div>
           <div className="hero-right">
             <h1>
-              Hi, I'm <span className="hero-name">V S</span>
+              Hi, I'm <span className="hero-name">VS</span>
               <span className="hero-wave" role="img" aria-label="wave">
                 👋
               </span>

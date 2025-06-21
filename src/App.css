@@ -182,19 +182,27 @@ nav a::after {
 }
 
 .improved-pfp {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  border: 5px solid #fff;
-  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.18);
+  border: 6px solid #fff;
+  background: linear-gradient(135deg, #00e6ff 0%, #2a5298 100%);
+  padding: 4px;
+  box-shadow: 0 8px 32px rgba(44, 83, 100, 0.18), 0 2px 16px #00e6ff33;
   object-fit: cover;
-  background: #fff;
   margin-bottom: 0;
-  margin-top: 0; /* Ensure no top margin */
-  margin-left: 0; /* Ensure no left margin */
-  margin-right: 0; /* Ensure no right margin */
-  display: block; /* Prevent inline spacing issues */
-  box-sizing: border-box; /* Include border in size */
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.improved-pfp:hover {
+  box-shadow: 0 12px 36px rgba(44, 83, 100, 0.28), 0 4px 24px #00e6ff55;
+  transform: scale(1.04) rotate(-2deg);
+  cursor: pointer;
 }
 
 .hero-right {
